@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     var stack = UIStackView()
     let progressBar: UIProgressView = {
-        $0.progress = 0.5
+        $0.progress = 0
         $0.progressTintColor = .yellow
         $0.trackTintColor = .darkGray
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -21,10 +21,14 @@ class ViewController: UIViewController {
         $0.textAlignment = .center
         $0.textColor = .darkGray
         $0.font = .systemFont(ofSize: 30)
-        $0.numberOfLines = 0
+        $0.numberOfLines = 2
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UILabel())
+    let titles = ["Soft": 5.0,"Medium": 7.0,"Hard": 15.0]
+    var totalTime = 0.0
+    var secondPassed = 0.0
+    var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5797027946, green: 0.9166823626, blue: 0.8194941282, alpha: 1)
@@ -35,12 +39,11 @@ class ViewController: UIViewController {
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(titleLabel)
-        let titles = ["Soft","Medium","Hard"]
         let eggStack = UIStackView()
         eggStack.axis = .horizontal
         eggStack.distribution = .fillEqually
-        for i in 0..<3{
-            let title = titles[i]
+        for (hardness,min) in titles {
+            let title = hardness
             let egg = EggView()
             egg.config(self, action: #selector(printHardness), with: title)
             eggStack.addArrangedSubview(egg)
@@ -62,8 +65,24 @@ class ViewController: UIViewController {
         ])
     }
     @objc func printHardness(_ sender: UIButton){
-        print(sender.currentTitle)
+        timer.invalidate()
+        let seconds = 60.0
+        progressBar.progress = 0.0
+        secondPassed = 0.0
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        if let title = sender.currentTitle {
+            totalTime = (self.titles[title]! * seconds)
+        }
     }
+    @objc func updateTimer(){
+        if secondPassed < totalTime {
+            progressBar.setProgress(Float(secondPassed/totalTime), animated: true)
+            secondPassed+=1
+        } else{
+            titleLabel.text! = "Done"
+        }
+    }
+
 
 }
 
