@@ -13,6 +13,7 @@
 		187EE91B2987FA9F00CFBD83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187EE9192987FA9F00CFBD83 /* Main.storyboard */; };
 		187EE91D2987FAA000CFBD83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187EE91C2987FAA000CFBD83 /* Assets.xcassets */; };
 		187EE9202987FAA000CFBD83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187EE91E2987FAA000CFBD83 /* LaunchScreen.storyboard */; };
+		187EE9282988B0F900CFBD83 /* EggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EE9272988B0F900CFBD83 /* EggView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		187EE91C2987FAA000CFBD83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187EE91F2987FAA000CFBD83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187EE9212987FAA000CFBD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		187EE9272988B0F900CFBD83 /* EggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				187EE9132987FA9F00CFBD83 /* AppDelegate.swift */,
 				187EE9152987FA9F00CFBD83 /* SceneDelegate.swift */,
 				187EE9172987FA9F00CFBD83 /* ViewController.swift */,
+				187EE9272988B0F900CFBD83 /* EggView.swift */,
 				187EE9192987FA9F00CFBD83 /* Main.storyboard */,
 				187EE91C2987FAA000CFBD83 /* Assets.xcassets */,
 				187EE91E2987FAA000CFBD83 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				187EE9182987FA9F00CFBD83 /* ViewController.swift in Sources */,
 				187EE9142987FA9F00CFBD83 /* AppDelegate.swift in Sources */,
+				187EE9282988B0F900CFBD83 /* EggView.swift in Sources */,
 				187EE9162987FA9F00CFBD83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
